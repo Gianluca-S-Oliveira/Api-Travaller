@@ -1,3 +1,4 @@
+// definição das variáveis de infos
 const input = document.querySelector("input");
 const button = document.querySelector("button");
 
@@ -8,6 +9,7 @@ const wind = document.querySelector("#wind");
 const content = document.querySelector(".content");
 const humidity = document.querySelector("#humidity");
 
+// adicionar ao botão o evento ao clicar em pesquisar e pegar os dados na api
 button.addEventListener("click", () => {
   if (!input.value) return;
 
@@ -15,11 +17,12 @@ button.addEventListener("click", () => {
   keyframeAnimation();
 });
 
+// chamada da api de clima em cidades/estados/paises pegando o valor digitado no input
 async function getDataApi() {
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(
     input.value
   )}&units=metric&appid=8cd5a8c23d39c734fa2bfab6beaddc33`;
-
+  // caso nao encontre os dados seta uma mensagem de erro
   try {
     await fetch(url)
       .then((res) => res.json())
@@ -29,7 +32,7 @@ async function getDataApi() {
 
           content.innerHTML =
             "Local não encontrado! Tente Novamente! A tela será recarregada em 3s....";
-
+          // se nao encontrar ele da reload na pagina em 4 segundos (não sei achei q seria legal usar isso kkk)
           setTimeout(reload, 4200);
         }
 
@@ -37,7 +40,7 @@ async function getDataApi() {
       });
   } catch (error) {}
 }
-
+// funcao para exibir os dados da api
 function loadData(data) {
   place.innerHTML = `${data.name}, ${data.sys.country}`;
   degrees.innerHTML = `Temperatura: ${Math.floor(data.main.temp)}° C`;
@@ -55,7 +58,7 @@ function loadData(data) {
 //     });
 //   }
 // }
-
+//  funcão para dar reload na pagina
 function reload() {
   location.reload();
 }
