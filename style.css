@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+body {
+  height: 100vh;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  background-color: #f7f7f7;
+}
+.text {
+}
+main {
+  border-radius: 5px;
+  max-width: 900px;
+  width: 100%;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+input {
+  padding: 5px;
+  outline: none;
+  border-radius: 5px;
+  font-size: 20px;
+  width: 65%;
+  animation: slidein 2s;
+  margin-left: 5%;
+}
+
+button {
+  display: flex;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 10px;
+  border-radius: 50px;
+  transition: 1s ease-in-out;
+}
+
+button i {
+  font-size: 40px;
+}
+
+.content {
+  margin-top: 2%;
+  justify-content: space-between;
+  word-break: break-word;
+  background: url("./IMG/2828921.jpg");
+  background-size: cover;
+  width: 700px;
+  position: relative;
+
+  font-size: 1.5rem;
+  padding: 30% 20%;
+  border-radius: 10%;
+  color: white;
+}
+#place {
+  color: rgb(0, 0, 0);
+  top: 10%;
+  left: 10%;
+  position: absolute;
+  font-weight: 900;
+  font-size: 3rem;
+
+  /* background-color: red; */
+  font-style: italic;
+  width: 500px;
+}
+.dados {
+  backdrop-filter: brightness(60%);
+  padding: 5%;
+  border-radius: 20px;
+  position: absolute;
+  left: 10%;
+  top: 45%;
+  width: 500px;
+}
+img {
+  min-width: 100px;
+  min-height: 140px;
+  background-image: radial-gradient(#ec7a7a, #f7f7f7 70%);
+  background: transparent;
+  position: absolute;
+  top: 50%;
+  right: 30%;
+}
+@keyframes slidein {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 50%;
+  }
+}
+
+button:hover {
+  background-color: red;
+  color: white;
+}
+
+@media (max-width: 1000px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .text {
+    position: absolute;
+    left: 3%;
+    top: 10%;
+  }
+  input {
+    position: absolute;
+    top: 30%;
+    width: 40%;
+    animation: none;
+  }
+  button {
+    position: absolute;
+    top: 29%;
+    left: 50%;
+  }
+  .dados {
+    width: 400px;
+  }
+  .content {
+    width: 90vw;
+    position: absolute;
+    top: 40%;
+    left: 0;
+
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  img {
+    position: absolute;
+    bottom: -15%;
+  }
+}
